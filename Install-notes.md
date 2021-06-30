@@ -40,28 +40,28 @@ New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Secur
 
 ## Create the text documents
 
-New-Item -ItemType File -Path "C:\Users\169user\Documents\Security Onion\Admin\Things to do" -Name "ThingsToDo.txt"  
+New-Item -ItemType File -Path "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do" -Name "ThingsToDo.txt"  
 
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "user: bStar"  
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "password: P@ssword01"
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" " "
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Add CentOS Boxes in IT-User space to allow SO-Allow as Analyst"
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Add Beats config for the Pfsence and CentOS boxes"
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Update WinlogBeats Config on the domain controllers to ship PowerShell Logs"
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Update Winlogbeats to ship top events only"
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Open Firewall on the Seconion to ingest firewall logs from Pfsence"
-Add-Content "C:\Users\169user\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Setup Repo to be able to update Seconion and APT packages"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "user: bStar"  
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "password: P@ssword01"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" " "
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Add CentOS Boxes in IT-User space to allow SO-Allow as Analyst"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Add Beats config for the Pfsence and CentOS boxes"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Update WinlogBeats Config on the domain controllers to ship PowerShell Logs"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Update Winlogbeats to ship top events only"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Open Firewall on the Seconion to ingest firewall logs from Pfsence"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Setup Repo to be able to update Seconion and APT packages"
 
-New-Item -ItemType File -Path "C:\Users\169user\Documents\Security Onion\FileBeats" -Name "ThingsToDo.txt"  -value "Install FileBeats on Pfsence"
+New-Item -ItemType File -Path "C:\Users\$env:USERNAME\Documents\Security Onion\FileBeats" -Name "ThingsToDo.txt"  -value "Install FileBeats on Pfsence"
 
-Add-Content "C:\Users\169user\Documents\Security Onion\FileBeats\ThingsToDo.txt" "INstall FileBeats on the 2 CentOS Boxes in the IT user group"
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\FileBeats\ThingsToDo.txt" "INstall FileBeats on the 2 CentOS Boxes in the IT user group"
 
 Expand-archive .\winlogbeats.zip -destination .\winlogbeat  
 move-item .\winlogbeat\winlogbeat-6.8.8-windows.x86_64\* .\winlogbeat
-move-item .\winlogbeat "c:\Users\$env:UserName\Documents\Security Onion\Winlogbeats"  
+move-item .\winlogbeat "c:\Users\$env:USERNAME\Documents\Security Onion\Winlogbeats"  
 
-move-item .\sysmon.exe "c:\users\$env:UserName\Documents\Security Onion\Sysmon"  
+move-item .\sysmon.exe "c:\users\$env:USERNAME\Documents\Security Onion\Sysmon"  
 
-move-item .\sysmon-config.xml "c:\users\$env:UserName\Documents\Security Onion\Sysmon"
+move-item .\sysmon-config.xml "c:\users\$env:USERNAME\Documents\Security Onion\Sysmon"
 
-Move-Item .\Install-notes.ps1 "c:\users\$env:UserName\Documents\Security Onion\Scripts" 
+Move-Item .\Install-notes.ps1 "c:\users\$env:USERNAME\Documents\Security Onion\Scripts" 

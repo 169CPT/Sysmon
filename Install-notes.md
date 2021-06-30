@@ -28,8 +28,8 @@ move-item .\winlogbeat "c:\program files\"
 
 New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Security Onion"
 
-New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Security Onion\Admin"
-
+New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Security Onion\Admin\Things To Do" -Force
+ 
 New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Security Onion\Scripts"
 
 New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Security Onion\Filebeats"
@@ -38,10 +38,11 @@ New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Secur
 
 New-Item -ItemType Directory -path c:\users\$env:USERNAME\Documents -name "Security Onion\Winlogbeats"  
 
+New-Item -ItemType File -Path "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do" -Name "ThingsToDo.txt"
+
 ## Create the text documents
 
-New-Item -ItemType File -Path "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do" -Name "ThingsToDo.txt"  
-
+Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "Seconion IP <InsertHere>"
 Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "user: bStar"  
 Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" "password: P@ssword01"
 Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\Admin\Things to do\ThingsToDo.txt" " "
@@ -57,7 +58,7 @@ New-Item -ItemType File -Path "C:\Users\$env:USERNAME\Documents\Security Onion\F
 Add-Content "C:\Users\$env:USERNAME\Documents\Security Onion\FileBeats\ThingsToDo.txt" "INstall FileBeats on the 2 CentOS Boxes in the IT user group"
 
 Expand-archive .\winlogbeats.zip -destination .\winlogbeat  
-move-item .\winlogbeat\winlogbeat-6.8.8-windows.x86_64\* .\winlogbeat
+move-item .\winlogbeat\winlogbeat-6.8.8-windows-x86_64\* .\winlogbeat
 move-item .\winlogbeat "c:\Users\$env:USERNAME\Documents\Security Onion\Winlogbeats"  
 
 move-item .\sysmon.exe "c:\users\$env:USERNAME\Documents\Security Onion\Sysmon"  
